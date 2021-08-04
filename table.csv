@@ -1,468 +1,485 @@
 name,                           tag,            code,           status,    description
-identity,                       multihash,      0x00,           permanent, raw binary
-cidv1,                          ipld,           0x01,           permanent, CIDv1
-cidv2,                          ipld,           0x02,           draft,     CIDv2
-cidv3,                          ipld,           0x03,           draft,     CIDv3
-ip4,                            multiaddr,      0x04,           permanent,
-tcp,                            multiaddr,      0x06,           permanent,
-sha1,                           multihash,      0x11,           permanent,
-sha2-256,                       multihash,      0x12,           permanent,
-sha2-512,                       multihash,      0x13,           permanent,
-sha3-512,                       multihash,      0x14,           permanent,
-sha3-384,                       multihash,      0x15,           permanent,
-sha3-256,                       multihash,      0x16,           permanent,
-sha3-224,                       multihash,      0x17,           permanent,
-shake-128,                      multihash,      0x18,           draft,
-shake-256,                      multihash,      0x19,           draft,
-keccak-224,                     multihash,      0x1a,           draft,     keccak has variable output length. The number specifies the core length
-keccak-256,                     multihash,      0x1b,           draft,
-keccak-384,                     multihash,      0x1c,           draft,
-keccak-512,                     multihash,      0x1d,           draft,
-blake3,                         multihash,      0x1e,           draft,     BLAKE3 has a default 32 byte output length. The maximum length is (2^64)-1 bytes.
-dccp,                           multiaddr,      0x21,           draft,
-murmur3-128,                    multihash,      0x22,           draft,
-murmur3-32,                     multihash,      0x23,           draft,
-ip6,                            multiaddr,      0x29,           permanent,
-ip6zone,                        multiaddr,      0x2a,           draft,
-path,                           namespace,      0x2f,           permanent, Namespace for string paths. Corresponds to `/` in ASCII.
-multicodec,                     multiformat,    0x30,           draft,
-multihash,                      multiformat,    0x31,           draft,
-multiaddr,                      multiformat,    0x32,           draft,
-multibase,                      multiformat,    0x33,           draft,
-dns,                            multiaddr,      0x35,           permanent,
-dns4,                           multiaddr,      0x36,           permanent,
-dns6,                           multiaddr,      0x37,           permanent,
-dnsaddr,                        multiaddr,      0x38,           permanent,
-protobuf,                       serialization,  0x50,           draft,     Protocol Buffers
-cbor,                           serialization,  0x51,           permanent, CBOR
-raw,                            ipld,           0x55,           permanent, raw binary
-dbl-sha2-256,                   multihash,      0x56,           draft,
-rlp,                            serialization,  0x60,           draft,     recursive length prefix
-bencode,                        serialization,  0x63,           draft,     bencode
-dag-pb,                         ipld,           0x70,           permanent, MerkleDAG protobuf
-dag-cbor,                       ipld,           0x71,           permanent, MerkleDAG cbor
-libp2p-key,                     ipld,           0x72,           permanent, Libp2p Public Key
-git-raw,                        ipld,           0x78,           permanent, Raw Git object
-torrent-info,                   ipld,           0x7b,           draft,     Torrent file info field (bencoded)
-torrent-file,                   ipld,           0x7c,           draft,     Torrent file (bencoded)
-leofcoin-block,                 ipld,           0x81,           draft,     Leofcoin Block
-leofcoin-tx,                    ipld,           0x82,           draft,     Leofcoin Transaction
-leofcoin-pr,                    ipld,           0x83,           draft,     Leofcoin Peer Reputation
-sctp,                           multiaddr,      0x84,           draft,
-dag-jose,                       ipld,           0x85,           draft,     MerkleDAG JOSE
-dag-cose,                       ipld,           0x86,           draft,     MerkleDAG COSE
-eth-block,                      ipld,           0x90,           permanent, Ethereum Block (RLP)
-eth-block-list,                 ipld,           0x91,           permanent, Ethereum Block List (RLP)
-eth-tx-trie,                    ipld,           0x92,           permanent, Ethereum Transaction Trie (Eth-Trie)
-eth-tx,                         ipld,           0x93,           permanent, Ethereum Transaction (RLP)
-eth-tx-receipt-trie,            ipld,           0x94,           permanent, Ethereum Transaction Receipt Trie (Eth-Trie)
-eth-tx-receipt,                 ipld,           0x95,           permanent, Ethereum Transaction Receipt (RLP)
-eth-state-trie,                 ipld,           0x96,           permanent, Ethereum State Trie (Eth-Secure-Trie)
-eth-account-snapshot,           ipld,           0x97,           permanent, Ethereum Account Snapshot (RLP)
-eth-storage-trie,               ipld,           0x98,           permanent, Ethereum Contract Storage Trie (Eth-Secure-Trie)
-bitcoin-block,                  ipld,           0xb0,           permanent, Bitcoin Block
-bitcoin-tx,                     ipld,           0xb1,           permanent, Bitcoin Tx
-bitcoin-witness-commitment,     ipld,           0xb2,           permanent, Bitcoin Witness Commitment
-zcash-block,                    ipld,           0xc0,           permanent, Zcash Block
-zcash-tx,                       ipld,           0xc1,           permanent, Zcash Tx
-caip-50,                        multiformat,    0xca,           draft,     CAIP-50 multi-chain account id
-streamid,                       namespace,      0xce,           draft,     Ceramic Stream Id
-stellar-block,                  ipld,           0xd0,           draft,     Stellar Block
-stellar-tx,                     ipld,           0xd1,           draft,     Stellar Tx
-md4,                            multihash,      0xd4,           draft,
-md5,                            multihash,      0xd5,           draft,
-bmt,                            multihash,      0xd6,           draft,     Binary Merkle Tree Hash
-decred-block,                   ipld,           0xe0,           draft,     Decred Block
-decred-tx,                      ipld,           0xe1,           draft,     Decred Tx
-ipld-ns,                        namespace,      0xe2,           draft,     IPLD path
-ipfs-ns,                        namespace,      0xe3,           draft,     IPFS path
-swarm-ns,                       namespace,      0xe4,           draft,     Swarm path
-ipns-ns,                        namespace,      0xe5,           draft,     IPNS path
-zeronet,                        namespace,      0xe6,           draft,     ZeroNet site address
-secp256k1-pub,                  key,            0xe7,           draft,     Secp256k1 public key (compressed)
-bls12_381-g1-pub,               key,            0xea,           draft,     BLS12-381 public key in the G1 field
-bls12_381-g2-pub,               key,            0xeb,           draft,     BLS12-381 public key in the G2 field
-x25519-pub,                     key,            0xec,           draft,     Curve25519 public key
-ed25519-pub,                    key,            0xed,           draft,     Ed25519 public key
-bls12_381-g1g2-pub,             key,            0xee,           draft,     BLS12-381 concatenated public keys in both the G1 and G2 fields
-dash-block,                     ipld,           0xf0,           draft,     Dash Block
-dash-tx,                        ipld,           0xf1,           draft,     Dash Tx
-swarm-manifest,                 ipld,           0xfa,           draft,     Swarm Manifest
-swarm-feed,                     ipld,           0xfb,           draft,     Swarm Feed
-udp,                            multiaddr,      0x0111,         draft,
-p2p-webrtc-star,                multiaddr,      0x0113,         draft,
-p2p-webrtc-direct,              multiaddr,      0x0114,         draft,
-p2p-stardust,                   multiaddr,      0x0115,         draft,
-p2p-circuit,                    multiaddr,      0x0122,         permanent,
-dag-json,                       ipld,           0x0129,         permanent, MerkleDAG json
-udt,                            multiaddr,      0x012d,         draft,
-utp,                            multiaddr,      0x012e,         draft,
-unix,                           multiaddr,      0x0190,         permanent,
-thread,                         multiaddr,      0x0196,         draft,     Textile Thread
-p2p,                            multiaddr,      0x01a5,         permanent, libp2p
-ipfs,                           multiaddr,      0x01a5,         draft,     libp2p (deprecated)
-https,                          multiaddr,      0x01bb,         draft,
-onion,                          multiaddr,      0x01bc,         draft,
-onion3,                         multiaddr,      0x01bd,         draft,
-garlic64,                       multiaddr,      0x01be,         draft,     I2P base64 (raw public key)
-garlic32,                       multiaddr,      0x01bf,         draft,     I2P base32 (hashed public key or encoded public key/checksum+optional secret)
-tls,                            multiaddr,      0x01c0,         draft,
-noise,                          multiaddr,      0x01c6,         draft,
-quic,                           multiaddr,      0x01cc,         permanent,
-ws,                             multiaddr,      0x01dd,         permanent,
-wss,                            multiaddr,      0x01de,         permanent,
-p2p-websocket-star,             multiaddr,      0x01df,         permanent,
-http,                           multiaddr,      0x01e0,         draft,
-json,                           serialization,  0x0200,         permanent, JSON (UTF-8-encoded)
-messagepack,                    serialization,  0x0201,         draft,     MessagePack
-libp2p-peer-record,             libp2p,         0x0301,         permanent, libp2p peer record type
-libp2p-relay-rsvp,              libp2p,         0x0302,         permanent, libp2p relay reservation voucher
-car-index-sorted,               serialization,  0x0400,         draft,     CARv2 IndexSorted index format
-sha2-256-trunc254-padded,       multihash,      0x1012,         permanent, SHA2-256 with the two most significant bits from the last byte zeroed (as via a mask with 0b00111111) - used for proving trees as in Filecoin
-ripemd-128,                     multihash,      0x1052,         draft,
-ripemd-160,                     multihash,      0x1053,         draft,
-ripemd-256,                     multihash,      0x1054,         draft,
-ripemd-320,                     multihash,      0x1055,         draft,
-x11,                            multihash,      0x1100,         draft,
-p256-pub,                       key,            0x1200,         draft,     P-256 public Key (compressed)
-p384-pub,                       key,            0x1201,         draft,     P-384 public Key (compressed)
-p521-pub,                       key,            0x1202,         draft,     P-521 public Key (compressed)
-ed448-pub,                      key,            0x1203,         draft,     Ed448 public Key
-x448-pub,                       key,            0x1204,         draft,     X448 public Key
-ed25519-priv,                   key,            0x1300,         draft,     Ed25519 private key
-secp256k1-priv,                 key,            0x1301,         draft,     Secp256k1 private key
-x25519-priv,                    key,            0x1302,         draft,     Curve25519 private key
-kangarootwelve,                 multihash,      0x1d01,         draft,     KangarooTwelve is an extendable-output hash function based on Keccak-p
-sm3-256,                        multihash,      0x534d,         draft,
-blake2b-8,                      multihash,      0xb201,         draft,     Blake2b consists of 64 output lengths that give different hashes
-blake2b-16,                     multihash,      0xb202,         draft,
-blake2b-24,                     multihash,      0xb203,         draft,
-blake2b-32,                     multihash,      0xb204,         draft,
-blake2b-40,                     multihash,      0xb205,         draft,
-blake2b-48,                     multihash,      0xb206,         draft,
-blake2b-56,                     multihash,      0xb207,         draft,
-blake2b-64,                     multihash,      0xb208,         draft,
-blake2b-72,                     multihash,      0xb209,         draft,
-blake2b-80,                     multihash,      0xb20a,         draft,
-blake2b-88,                     multihash,      0xb20b,         draft,
-blake2b-96,                     multihash,      0xb20c,         draft,
-blake2b-104,                    multihash,      0xb20d,         draft,
-blake2b-112,                    multihash,      0xb20e,         draft,
-blake2b-120,                    multihash,      0xb20f,         draft,
-blake2b-128,                    multihash,      0xb210,         draft,
-blake2b-136,                    multihash,      0xb211,         draft,
-blake2b-144,                    multihash,      0xb212,         draft,
-blake2b-152,                    multihash,      0xb213,         draft,
-blake2b-160,                    multihash,      0xb214,         draft,
-blake2b-168,                    multihash,      0xb215,         draft,
-blake2b-176,                    multihash,      0xb216,         draft,
-blake2b-184,                    multihash,      0xb217,         draft,
-blake2b-192,                    multihash,      0xb218,         draft,
-blake2b-200,                    multihash,      0xb219,         draft,
-blake2b-208,                    multihash,      0xb21a,         draft,
-blake2b-216,                    multihash,      0xb21b,         draft,
-blake2b-224,                    multihash,      0xb21c,         draft,
-blake2b-232,                    multihash,      0xb21d,         draft,
-blake2b-240,                    multihash,      0xb21e,         draft,
-blake2b-248,                    multihash,      0xb21f,         draft,
-blake2b-256,                    multihash,      0xb220,         permanent,
-blake2b-264,                    multihash,      0xb221,         draft,
-blake2b-272,                    multihash,      0xb222,         draft,
-blake2b-280,                    multihash,      0xb223,         draft,
-blake2b-288,                    multihash,      0xb224,         draft,
-blake2b-296,                    multihash,      0xb225,         draft,
-blake2b-304,                    multihash,      0xb226,         draft,
-blake2b-312,                    multihash,      0xb227,         draft,
-blake2b-320,                    multihash,      0xb228,         draft,
-blake2b-328,                    multihash,      0xb229,         draft,
-blake2b-336,                    multihash,      0xb22a,         draft,
-blake2b-344,                    multihash,      0xb22b,         draft,
-blake2b-352,                    multihash,      0xb22c,         draft,
-blake2b-360,                    multihash,      0xb22d,         draft,
-blake2b-368,                    multihash,      0xb22e,         draft,
-blake2b-376,                    multihash,      0xb22f,         draft,
-blake2b-384,                    multihash,      0xb230,         draft,
-blake2b-392,                    multihash,      0xb231,         draft,
-blake2b-400,                    multihash,      0xb232,         draft,
-blake2b-408,                    multihash,      0xb233,         draft,
-blake2b-416,                    multihash,      0xb234,         draft,
-blake2b-424,                    multihash,      0xb235,         draft,
-blake2b-432,                    multihash,      0xb236,         draft,
-blake2b-440,                    multihash,      0xb237,         draft,
-blake2b-448,                    multihash,      0xb238,         draft,
-blake2b-456,                    multihash,      0xb239,         draft,
-blake2b-464,                    multihash,      0xb23a,         draft,
-blake2b-472,                    multihash,      0xb23b,         draft,
-blake2b-480,                    multihash,      0xb23c,         draft,
-blake2b-488,                    multihash,      0xb23d,         draft,
-blake2b-496,                    multihash,      0xb23e,         draft,
-blake2b-504,                    multihash,      0xb23f,         draft,
-blake2b-512,                    multihash,      0xb240,         draft,
-blake2s-8,                      multihash,      0xb241,         draft,     Blake2s consists of 32 output lengths that give different hashes
-blake2s-16,                     multihash,      0xb242,         draft,
-blake2s-24,                     multihash,      0xb243,         draft,
-blake2s-32,                     multihash,      0xb244,         draft,
-blake2s-40,                     multihash,      0xb245,         draft,
-blake2s-48,                     multihash,      0xb246,         draft,
-blake2s-56,                     multihash,      0xb247,         draft,
-blake2s-64,                     multihash,      0xb248,         draft,
-blake2s-72,                     multihash,      0xb249,         draft,
-blake2s-80,                     multihash,      0xb24a,         draft,
-blake2s-88,                     multihash,      0xb24b,         draft,
-blake2s-96,                     multihash,      0xb24c,         draft,
-blake2s-104,                    multihash,      0xb24d,         draft,
-blake2s-112,                    multihash,      0xb24e,         draft,
-blake2s-120,                    multihash,      0xb24f,         draft,
-blake2s-128,                    multihash,      0xb250,         draft,
-blake2s-136,                    multihash,      0xb251,         draft,
-blake2s-144,                    multihash,      0xb252,         draft,
-blake2s-152,                    multihash,      0xb253,         draft,
-blake2s-160,                    multihash,      0xb254,         draft,
-blake2s-168,                    multihash,      0xb255,         draft,
-blake2s-176,                    multihash,      0xb256,         draft,
-blake2s-184,                    multihash,      0xb257,         draft,
-blake2s-192,                    multihash,      0xb258,         draft,
-blake2s-200,                    multihash,      0xb259,         draft,
-blake2s-208,                    multihash,      0xb25a,         draft,
-blake2s-216,                    multihash,      0xb25b,         draft,
-blake2s-224,                    multihash,      0xb25c,         draft,
-blake2s-232,                    multihash,      0xb25d,         draft,
-blake2s-240,                    multihash,      0xb25e,         draft,
-blake2s-248,                    multihash,      0xb25f,         draft,
-blake2s-256,                    multihash,      0xb260,         draft,
-skein256-8,                     multihash,      0xb301,         draft,     Skein256 consists of 32 output lengths that give different hashes
-skein256-16,                    multihash,      0xb302,         draft,
-skein256-24,                    multihash,      0xb303,         draft,
-skein256-32,                    multihash,      0xb304,         draft,
-skein256-40,                    multihash,      0xb305,         draft,
-skein256-48,                    multihash,      0xb306,         draft,
-skein256-56,                    multihash,      0xb307,         draft,
-skein256-64,                    multihash,      0xb308,         draft,
-skein256-72,                    multihash,      0xb309,         draft,
-skein256-80,                    multihash,      0xb30a,         draft,
-skein256-88,                    multihash,      0xb30b,         draft,
-skein256-96,                    multihash,      0xb30c,         draft,
-skein256-104,                   multihash,      0xb30d,         draft,
-skein256-112,                   multihash,      0xb30e,         draft,
-skein256-120,                   multihash,      0xb30f,         draft,
-skein256-128,                   multihash,      0xb310,         draft,
-skein256-136,                   multihash,      0xb311,         draft,
-skein256-144,                   multihash,      0xb312,         draft,
-skein256-152,                   multihash,      0xb313,         draft,
-skein256-160,                   multihash,      0xb314,         draft,
-skein256-168,                   multihash,      0xb315,         draft,
-skein256-176,                   multihash,      0xb316,         draft,
-skein256-184,                   multihash,      0xb317,         draft,
-skein256-192,                   multihash,      0xb318,         draft,
-skein256-200,                   multihash,      0xb319,         draft,
-skein256-208,                   multihash,      0xb31a,         draft,
-skein256-216,                   multihash,      0xb31b,         draft,
-skein256-224,                   multihash,      0xb31c,         draft,
-skein256-232,                   multihash,      0xb31d,         draft,
-skein256-240,                   multihash,      0xb31e,         draft,
-skein256-248,                   multihash,      0xb31f,         draft,
-skein256-256,                   multihash,      0xb320,         draft,
-skein512-8,                     multihash,      0xb321,         draft,     Skein512 consists of 64 output lengths that give different hashes
-skein512-16,                    multihash,      0xb322,         draft,
-skein512-24,                    multihash,      0xb323,         draft,
-skein512-32,                    multihash,      0xb324,         draft,
-skein512-40,                    multihash,      0xb325,         draft,
-skein512-48,                    multihash,      0xb326,         draft,
-skein512-56,                    multihash,      0xb327,         draft,
-skein512-64,                    multihash,      0xb328,         draft,
-skein512-72,                    multihash,      0xb329,         draft,
-skein512-80,                    multihash,      0xb32a,         draft,
-skein512-88,                    multihash,      0xb32b,         draft,
-skein512-96,                    multihash,      0xb32c,         draft,
-skein512-104,                   multihash,      0xb32d,         draft,
-skein512-112,                   multihash,      0xb32e,         draft,
-skein512-120,                   multihash,      0xb32f,         draft,
-skein512-128,                   multihash,      0xb330,         draft,
-skein512-136,                   multihash,      0xb331,         draft,
-skein512-144,                   multihash,      0xb332,         draft,
-skein512-152,                   multihash,      0xb333,         draft,
-skein512-160,                   multihash,      0xb334,         draft,
-skein512-168,                   multihash,      0xb335,         draft,
-skein512-176,                   multihash,      0xb336,         draft,
-skein512-184,                   multihash,      0xb337,         draft,
-skein512-192,                   multihash,      0xb338,         draft,
-skein512-200,                   multihash,      0xb339,         draft,
-skein512-208,                   multihash,      0xb33a,         draft,
-skein512-216,                   multihash,      0xb33b,         draft,
-skein512-224,                   multihash,      0xb33c,         draft,
-skein512-232,                   multihash,      0xb33d,         draft,
-skein512-240,                   multihash,      0xb33e,         draft,
-skein512-248,                   multihash,      0xb33f,         draft,
-skein512-256,                   multihash,      0xb340,         draft,
-skein512-264,                   multihash,      0xb341,         draft,
-skein512-272,                   multihash,      0xb342,         draft,
-skein512-280,                   multihash,      0xb343,         draft,
-skein512-288,                   multihash,      0xb344,         draft,
-skein512-296,                   multihash,      0xb345,         draft,
-skein512-304,                   multihash,      0xb346,         draft,
-skein512-312,                   multihash,      0xb347,         draft,
-skein512-320,                   multihash,      0xb348,         draft,
-skein512-328,                   multihash,      0xb349,         draft,
-skein512-336,                   multihash,      0xb34a,         draft,
-skein512-344,                   multihash,      0xb34b,         draft,
-skein512-352,                   multihash,      0xb34c,         draft,
-skein512-360,                   multihash,      0xb34d,         draft,
-skein512-368,                   multihash,      0xb34e,         draft,
-skein512-376,                   multihash,      0xb34f,         draft,
-skein512-384,                   multihash,      0xb350,         draft,
-skein512-392,                   multihash,      0xb351,         draft,
-skein512-400,                   multihash,      0xb352,         draft,
-skein512-408,                   multihash,      0xb353,         draft,
-skein512-416,                   multihash,      0xb354,         draft,
-skein512-424,                   multihash,      0xb355,         draft,
-skein512-432,                   multihash,      0xb356,         draft,
-skein512-440,                   multihash,      0xb357,         draft,
-skein512-448,                   multihash,      0xb358,         draft,
-skein512-456,                   multihash,      0xb359,         draft,
-skein512-464,                   multihash,      0xb35a,         draft,
-skein512-472,                   multihash,      0xb35b,         draft,
-skein512-480,                   multihash,      0xb35c,         draft,
-skein512-488,                   multihash,      0xb35d,         draft,
-skein512-496,                   multihash,      0xb35e,         draft,
-skein512-504,                   multihash,      0xb35f,         draft,
-skein512-512,                   multihash,      0xb360,         draft,
-skein1024-8,                    multihash,      0xb361,         draft,     Skein1024 consists of 128 output lengths that give different hashes
-skein1024-16,                   multihash,      0xb362,         draft,
-skein1024-24,                   multihash,      0xb363,         draft,
-skein1024-32,                   multihash,      0xb364,         draft,
-skein1024-40,                   multihash,      0xb365,         draft,
-skein1024-48,                   multihash,      0xb366,         draft,
-skein1024-56,                   multihash,      0xb367,         draft,
-skein1024-64,                   multihash,      0xb368,         draft,
-skein1024-72,                   multihash,      0xb369,         draft,
-skein1024-80,                   multihash,      0xb36a,         draft,
-skein1024-88,                   multihash,      0xb36b,         draft,
-skein1024-96,                   multihash,      0xb36c,         draft,
-skein1024-104,                  multihash,      0xb36d,         draft,
-skein1024-112,                  multihash,      0xb36e,         draft,
-skein1024-120,                  multihash,      0xb36f,         draft,
-skein1024-128,                  multihash,      0xb370,         draft,
-skein1024-136,                  multihash,      0xb371,         draft,
-skein1024-144,                  multihash,      0xb372,         draft,
-skein1024-152,                  multihash,      0xb373,         draft,
-skein1024-160,                  multihash,      0xb374,         draft,
-skein1024-168,                  multihash,      0xb375,         draft,
-skein1024-176,                  multihash,      0xb376,         draft,
-skein1024-184,                  multihash,      0xb377,         draft,
-skein1024-192,                  multihash,      0xb378,         draft,
-skein1024-200,                  multihash,      0xb379,         draft,
-skein1024-208,                  multihash,      0xb37a,         draft,
-skein1024-216,                  multihash,      0xb37b,         draft,
-skein1024-224,                  multihash,      0xb37c,         draft,
-skein1024-232,                  multihash,      0xb37d,         draft,
-skein1024-240,                  multihash,      0xb37e,         draft,
-skein1024-248,                  multihash,      0xb37f,         draft,
-skein1024-256,                  multihash,      0xb380,         draft,
-skein1024-264,                  multihash,      0xb381,         draft,
-skein1024-272,                  multihash,      0xb382,         draft,
-skein1024-280,                  multihash,      0xb383,         draft,
-skein1024-288,                  multihash,      0xb384,         draft,
-skein1024-296,                  multihash,      0xb385,         draft,
-skein1024-304,                  multihash,      0xb386,         draft,
-skein1024-312,                  multihash,      0xb387,         draft,
-skein1024-320,                  multihash,      0xb388,         draft,
-skein1024-328,                  multihash,      0xb389,         draft,
-skein1024-336,                  multihash,      0xb38a,         draft,
-skein1024-344,                  multihash,      0xb38b,         draft,
-skein1024-352,                  multihash,      0xb38c,         draft,
-skein1024-360,                  multihash,      0xb38d,         draft,
-skein1024-368,                  multihash,      0xb38e,         draft,
-skein1024-376,                  multihash,      0xb38f,         draft,
-skein1024-384,                  multihash,      0xb390,         draft,
-skein1024-392,                  multihash,      0xb391,         draft,
-skein1024-400,                  multihash,      0xb392,         draft,
-skein1024-408,                  multihash,      0xb393,         draft,
-skein1024-416,                  multihash,      0xb394,         draft,
-skein1024-424,                  multihash,      0xb395,         draft,
-skein1024-432,                  multihash,      0xb396,         draft,
-skein1024-440,                  multihash,      0xb397,         draft,
-skein1024-448,                  multihash,      0xb398,         draft,
-skein1024-456,                  multihash,      0xb399,         draft,
-skein1024-464,                  multihash,      0xb39a,         draft,
-skein1024-472,                  multihash,      0xb39b,         draft,
-skein1024-480,                  multihash,      0xb39c,         draft,
-skein1024-488,                  multihash,      0xb39d,         draft,
-skein1024-496,                  multihash,      0xb39e,         draft,
-skein1024-504,                  multihash,      0xb39f,         draft,
-skein1024-512,                  multihash,      0xb3a0,         draft,
-skein1024-520,                  multihash,      0xb3a1,         draft,
-skein1024-528,                  multihash,      0xb3a2,         draft,
-skein1024-536,                  multihash,      0xb3a3,         draft,
-skein1024-544,                  multihash,      0xb3a4,         draft,
-skein1024-552,                  multihash,      0xb3a5,         draft,
-skein1024-560,                  multihash,      0xb3a6,         draft,
-skein1024-568,                  multihash,      0xb3a7,         draft,
-skein1024-576,                  multihash,      0xb3a8,         draft,
-skein1024-584,                  multihash,      0xb3a9,         draft,
-skein1024-592,                  multihash,      0xb3aa,         draft,
-skein1024-600,                  multihash,      0xb3ab,         draft,
-skein1024-608,                  multihash,      0xb3ac,         draft,
-skein1024-616,                  multihash,      0xb3ad,         draft,
-skein1024-624,                  multihash,      0xb3ae,         draft,
-skein1024-632,                  multihash,      0xb3af,         draft,
-skein1024-640,                  multihash,      0xb3b0,         draft,
-skein1024-648,                  multihash,      0xb3b1,         draft,
-skein1024-656,                  multihash,      0xb3b2,         draft,
-skein1024-664,                  multihash,      0xb3b3,         draft,
-skein1024-672,                  multihash,      0xb3b4,         draft,
-skein1024-680,                  multihash,      0xb3b5,         draft,
-skein1024-688,                  multihash,      0xb3b6,         draft,
-skein1024-696,                  multihash,      0xb3b7,         draft,
-skein1024-704,                  multihash,      0xb3b8,         draft,
-skein1024-712,                  multihash,      0xb3b9,         draft,
-skein1024-720,                  multihash,      0xb3ba,         draft,
-skein1024-728,                  multihash,      0xb3bb,         draft,
-skein1024-736,                  multihash,      0xb3bc,         draft,
-skein1024-744,                  multihash,      0xb3bd,         draft,
-skein1024-752,                  multihash,      0xb3be,         draft,
-skein1024-760,                  multihash,      0xb3bf,         draft,
-skein1024-768,                  multihash,      0xb3c0,         draft,
-skein1024-776,                  multihash,      0xb3c1,         draft,
-skein1024-784,                  multihash,      0xb3c2,         draft,
-skein1024-792,                  multihash,      0xb3c3,         draft,
-skein1024-800,                  multihash,      0xb3c4,         draft,
-skein1024-808,                  multihash,      0xb3c5,         draft,
-skein1024-816,                  multihash,      0xb3c6,         draft,
-skein1024-824,                  multihash,      0xb3c7,         draft,
-skein1024-832,                  multihash,      0xb3c8,         draft,
-skein1024-840,                  multihash,      0xb3c9,         draft,
-skein1024-848,                  multihash,      0xb3ca,         draft,
-skein1024-856,                  multihash,      0xb3cb,         draft,
-skein1024-864,                  multihash,      0xb3cc,         draft,
-skein1024-872,                  multihash,      0xb3cd,         draft,
-skein1024-880,                  multihash,      0xb3ce,         draft,
-skein1024-888,                  multihash,      0xb3cf,         draft,
-skein1024-896,                  multihash,      0xb3d0,         draft,
-skein1024-904,                  multihash,      0xb3d1,         draft,
-skein1024-912,                  multihash,      0xb3d2,         draft,
-skein1024-920,                  multihash,      0xb3d3,         draft,
-skein1024-928,                  multihash,      0xb3d4,         draft,
-skein1024-936,                  multihash,      0xb3d5,         draft,
-skein1024-944,                  multihash,      0xb3d6,         draft,
-skein1024-952,                  multihash,      0xb3d7,         draft,
-skein1024-960,                  multihash,      0xb3d8,         draft,
-skein1024-968,                  multihash,      0xb3d9,         draft,
-skein1024-976,                  multihash,      0xb3da,         draft,
-skein1024-984,                  multihash,      0xb3db,         draft,
-skein1024-992,                  multihash,      0xb3dc,         draft,
-skein1024-1000,                 multihash,      0xb3dd,         draft,
-skein1024-1008,                 multihash,      0xb3de,         draft,
-skein1024-1016,                 multihash,      0xb3df,         draft,
-skein1024-1024,                 multihash,      0xb3e0,         draft,
-poseidon-bls12_381-a2-fc1,      multihash,      0xb401,         permanent, Poseidon using BLS12-381 and arity of 2 with Filecoin parameters
-poseidon-bls12_381-a2-fc1-sc,   multihash,      0xb402,         draft,     Poseidon using BLS12-381 and arity of 2 with Filecoin parameters - high-security variant
-zeroxcert-imprint-256,          zeroxcert,      0xce11,         draft,     0xcert Asset Imprint (root hash)
-fil-commitment-unsealed,        filecoin,       0xf101,         permanent, Filecoin piece or sector data commitment merkle node/root (CommP & CommD)
-fil-commitment-sealed,          filecoin,       0xf102,         permanent, Filecoin sector data commitment merkle node/root - sealed and replicated (CommR)
-holochain-adr-v0,               holochain,      0x807124,       draft,     Holochain v0 address    + 8 R-S (63 x Base-32)
-holochain-adr-v1,               holochain,      0x817124,       draft,     Holochain v1 address    + 8 R-S (63 x Base-32)
-holochain-key-v0,               holochain,      0x947124,       draft,     Holochain v0 public key + 8 R-S (63 x Base-32)
-holochain-key-v1,               holochain,      0x957124,       draft,     Holochain v1 public key + 8 R-S (63 x Base-32)
-holochain-sig-v0,               holochain,      0xa27124,       draft,     Holochain v0 signature  + 8 R-S (63 x Base-32)
-holochain-sig-v1,               holochain,      0xa37124,       draft,     Holochain v1 signature  + 8 R-S (63 x Base-32)
-skynet-ns,                      namespace,      0xb19910,       draft,     Skynet Namespace
+identity,                       multihash,0,           permanent, raw binary
+cidv1,                          ipld,1,           permanent,CIDv1
+cidv2,                          ipld,2,           draft,CIDv2
+cidv3,                          ipld,3,           draft,CIDv3
+ip4,                            multiaddr,4,           permanent,
+tcp,                            multiaddr,6,           permanent,
+sha1,                           multihash,11,           permanent,
+sha2-256,                       multihash,12,           permanent,
+sha2-512,                       multihash,13,           permanent,
+sha3-512,                       multihash,14,           permanent,
+sha3-384,                       multihash,15,           permanent,
+sha3-256,                       multihash,16,           permanent,
+sha3-224,                       multihash,17,           permanent,
+shake-128,                      multihash,18,           draft,
+shake-256,                      multihash,19,           draft,
+keccak-224,                     multihash,1A,           draft,     keccak has variable output length. The number specifies the core length
+keccak-256,                     multihash,1B,           draft,
+keccak-384,                     multihash,1C,           draft,
+keccak-512,                     multihash,1D,           draft,
+blake3,                         multihash,1E,           draft,BLAKE3 has a default 32 byte output length. The maximum length is (2^64)-1 bytes.
+dccp,                           multiaddr,21,           draft,
+murmur3-128,                    multihash,22,           draft,
+murmur3-32,                     multihash,23,           draft,
+ip6,                            multiaddr,29,           permanent,
+ip6zone,                        multiaddr,2A,           draft,
+path,                           namespace,2F,           permanent, Namespace for string paths. Corresponds to `/` in ASCII.
+multicodec,                     multiformat,30,           draft,
+multihash,                      multiformat,31,           draft,
+multiaddr,                      multiformat,32,           draft,
+multibase,                      multiformat,33,           draft,
+dns,                            multiaddr,35,           permanent,
+dns4,                           multiaddr,36,           permanent,
+dns6,                           multiaddr,37,           permanent,
+dnsaddr,                        multiaddr,38,           permanent,
+protobuf,                       serialization,50,           draft,     Protocol Buffers
+cbor,                           serialization,51,           permanent, CBOR
+raw,                            ipld,55,           permanent, raw binary
+dbl-sha2-256,                   multihash,56,           draft,
+rlp,                            serialization,60,           draft,     recursive length prefix
+bencode,                        serialization,63,           draft,     bencode
+dag-pb,                         ipld,70,           permanent, MerkleDAG protobuf
+dag-cbor,                       ipld,71,           permanent, MerkleDAG cbor
+libp2p-key,                     ipld,72,           permanent,Libp2p Public Key
+git-raw,                        ipld,78,           permanent, Raw Git object
+torrent-info,                   ipld,7B,           draft,     Torrent file info field (bencoded)
+torrent-file,                   ipld,7C,           draft,     Torrent file (bencoded)
+leofcoin-block,                 ipld,81,           draft,     Leofcoin Block
+leofcoin-tx,                    ipld,82,           draft,     Leofcoin Transaction
+leofcoin-pr,                    ipld,83,           draft,     Leofcoin Peer Reputation
+sctp,                           multiaddr,84,           draft,
+dag-jose,                       ipld,85,           draft,     MerkleDAG JOSE
+dag-cose,                       ipld,86,           draft,     MerkleDAG COSE
+eth-block,                      ipld,90,           permanent, Ethereum Block (RLP)
+eth-block-list,                 ipld,91,           permanent, Ethereum Block List (RLP)
+eth-tx-trie,                    ipld,92,           permanent, Ethereum Transaction Trie (Eth-Trie)
+eth-tx,                         ipld,93,           permanent, Ethereum Transaction (RLP)
+eth-tx-receipt-trie,            ipld,94,           permanent, Ethereum Transaction Receipt Trie (Eth-Trie)
+eth-tx-receipt,                 ipld,95,           permanent, Ethereum Transaction Receipt (RLP)
+eth-state-trie,                 ipld,96,           permanent, Ethereum State Trie (Eth-Secure-Trie)
+eth-account-snapshot,           ipld,97,           permanent, Ethereum Account Snapshot (RLP)
+eth-storage-trie,               ipld,98,           permanent, Ethereum Contract Storage Trie (Eth-Secure-Trie)
+bitcoin-block,                  ipld,B0,           permanent, Bitcoin Block
+bitcoin-tx,                     ipld,B1,           permanent, Bitcoin Tx
+bitcoin-witness-commitment,     ipld,B2,           permanent, Bitcoin Witness Commitment
+zcash-block,                    ipld,C0,           permanent, Zcash Block
+zcash-tx,                       ipld,C1,           permanent, Zcash Tx
+caip-50,                        multiformat,CA,           draft,CAIP-50 multi-chain account id
+streamid,                       namespace,CE,           draft,     Ceramic Stream Id
+stellar-block,                  ipld,D0,           draft,     Stellar Block
+stellar-tx,                     ipld,D1,           draft,     Stellar Tx
+md4,                            multihash,D4,           draft,
+md5,                            multihash,D5,           draft,
+bmt,                            multihash,D6,           draft,     Binary Merkle Tree Hash
+decred-block,                   ipld,E0,           draft,     Decred Block
+decred-tx,                      ipld,E1,           draft,     Decred Tx
+ipld-ns,                        namespace,E2,           draft,     IPLD path
+ipfs-ns,                        namespace,E3,           draft,     IPFS path
+swarm-ns,                       namespace,E4,           draft,     Swarm path
+ipns-ns,                        namespace,E5,           draft,     IPNS path
+zeronet,                        namespace,E6,           draft,     ZeroNet site address
+secp256k1-pub,                  key,E7,           draft,Secp256k1 public key (compressed)
+bls12_381-g1-pub,               key,EA,           draft,BLS12-381 public key in the G1 field
+bls12_381-g2-pub,               key,EB,           draft,BLS12-381 public key in the G2 field
+x25519-pub,                     key,EC,           draft,Curve25519 public key
+ed25519-pub,                    key,ED,           draft,Ed25519 public key
+bls12_381-g1g2-pub,             key,EE,           draft,BLS12-381 concatenated public keys in both the G1 and G2 fields
+dash-block,                     ipld,F0,           draft,     Dash Block
+dash-tx,                        ipld,F1,           draft,     Dash Tx
+swarm-manifest,                 ipld,FA,           draft,     Swarm Manifest
+swarm-feed,                     ipld,FB,           draft,     Swarm Feed
+udp,                            multiaddr,111,         draft,
+p2p-webrtc-star,                multiaddr,113,         draft,
+p2p-webrtc-direct,              multiaddr,114,         draft,
+p2p-stardust,                   multiaddr,115,         draft,
+p2p-circuit,                    multiaddr,122,         permanent,
+dag-json,                       ipld,129,         permanent, MerkleDAG json
+udt,                            multiaddr,12D,         draft,
+utp,                            multiaddr,12E,         draft,
+unix,                           multiaddr,190,         permanent,
+thread,                         multiaddr,196,         draft,     Textile Thread
+p2p,                            multiaddr,1A5,         permanent,libp2p
+ipfs,                           multiaddr,1A5,         draft,libp2p (deprecated)
+https,                          multiaddr,1BB,         draft,
+onion,                          multiaddr,1BC,         draft,
+onion3,                         multiaddr,1BD,         draft,
+garlic64,                       multiaddr,1BE,         draft,I2P base64 (raw public key)
+garlic32,                       multiaddr,1BF,         draft,I2P base32 (hashed public key or encoded public key/checksum+optional secret)
+tls,                            multiaddr,1C0,         draft,
+noise,                          multiaddr,1C6,         draft,
+quic,                           multiaddr,1CC,         permanent,
+ws,                             multiaddr,1DD,         permanent,
+wss,                            multiaddr,1DE,         permanent,
+p2p-websocket-star,             multiaddr,1DF,         permanent,
+http,                           multiaddr,1E0,         draft,
+json,                           serialization,200,         permanent,JSON (UTF-8-encoded)
+messagepack,                    serialization,201,         draft,     MessagePack
+libp2p-peer-record,libp2p,301,         permanent,libp2p peer record type
+libp2p-relay-rsvp,libp2p,302,         permanent,libp2p relay reservation voucher
+car-index-sorted,               serialization,400,         draft,CARv2 IndexSorted index format
+tendermint-header,ipld,500,         draft,Tendermint Header
+tendermint-header-tree,ipld,501,         draft,Tendermint Header Field Tree
+tendermint-part-tree,ipld,502,         draft,Tendermint (Block) Part Tree
+tendermint-light-block,ipld,503,         draft,Tendermint Light Block
+tendermint-commit,ipld,504,         draft,Tendermint Commit
+tendermint-commit-tree,ipld,505,         draft,Tendermint Commit Tree
+tendermint-evidence,ipld,506,         draft,Tendermint Evidence
+tendermint-evidence-tree,ipld,507,         draft,Tendermint Evidence Tree
+tendermint-result,ipld,508,         draft,Tendermint Result
+tendermint-result-tree,ipld,509,         draft,Tendermint Result Tree
+tendermint-validator,ipld,50a,         draft,Tendermint Validator
+tendermint-validator-tree,ipld,50B,         draft,Tendermint Validator Tree
+tendermint-params,ipld,50C,         draft,Tendermint Params
+tendermint-proposal,ipld,50D,         draft,Tendermint Proposal
+tendermint-tx-tree,ipld,50E,         draft,Tendermint Tx Tree
+cosmos-smt,ipld,550,         draft,Cosmos SMT
+cosmos-iavl,ipld,531,         draft,Cosmos IAVL
+sha2-256-trunc254-padded,       multihash,1012,         permanent,SHA2-256 with the two most significant bits from the last byte zeroed (as via a mask with 0b00111111) - used for proving trees as in Filecoin
+ripemd-128,                     multihash,1052,         draft,
+ripemd-160,                     multihash,1053,         draft,
+ripemd-256,                     multihash,1054,         draft,
+ripemd-320,                     multihash,1055,         draft,
+x11,                            multihash,1100,         draft,
+p256-pub,                       key,1200,         draft,P-256 public Key (compressed)
+p384-pub,                       key,1201,         draft,P-384 public Key (compressed)
+p521-pub,                       key,1202,         draft,P-521 public Key (compressed)
+ed448-pub,                      key,1203,         draft,Ed448 public Key
+x448-pub,                       key,1204,         draft,X448 public Key
+ed25519-priv,                   key,1300,         draft,Ed25519 private key
+secp256k1-priv,                 key,1301,         draft,Secp256k1 private key
+x25519-priv,                    key,1302,         draft,Curve25519 private key
+kangarootwelve,                 multihash,1D01,         draft,     KangarooTwelve is an extendable-output hash function based on Keccak-p
+sm3-256,                        multihash,534D,         draft,
+blake2b-8,                      multihash,B201,         draft,Blake2b consists of 64 output lengths that give different hashes
+blake2b-16,                     multihash,B202,         draft,
+blake2b-24,                     multihash,B203,         draft,
+blake2b-32,                     multihash,B204,         draft,
+blake2b-40,                     multihash,B205,         draft,
+blake2b-48,                     multihash,B206,         draft,
+blake2b-56,                     multihash,B207,         draft,
+blake2b-64,                     multihash,B208,         draft,
+blake2b-72,                     multihash,B209,         draft,
+blake2b-80,                     multihash,B20A,         draft,
+blake2b-88,                     multihash,B20B,         draft,
+blake2b-96,                     multihash,B20C,         draft,
+blake2b-104,                    multihash,B20D,         draft,
+blake2b-112,                    multihash,B20E,         draft,
+blake2b-120,                    multihash,B20F,         draft,
+blake2b-128,                    multihash,B210,         draft,
+blake2b-136,                    multihash,B211,         draft,
+blake2b-144,                    multihash,B212,         draft,
+blake2b-152,                    multihash,B213,         draft,
+blake2b-160,                    multihash,B214,         draft,
+blake2b-168,                    multihash,B215,         draft,
+blake2b-176,                    multihash,B216,         draft,
+blake2b-184,                    multihash,B217,         draft,
+blake2b-192,                    multihash,B218,         draft,
+blake2b-200,                    multihash,B219,         draft,
+blake2b-208,                    multihash,B21A,         draft,
+blake2b-216,                    multihash,B21B,         draft,
+blake2b-224,                    multihash,B21C,         draft,
+blake2b-232,                    multihash,B21D,         draft,
+blake2b-240,                    multihash,B21E,         draft,
+blake2b-248,                    multihash,B21F,         draft,
+blake2b-256,                    multihash,B220,         permanent,
+blake2b-264,                    multihash,B221,         draft,
+blake2b-272,                    multihash,B222,         draft,
+blake2b-280,                    multihash,B223,         draft,
+blake2b-288,                    multihash,B224,         draft,
+blake2b-296,                    multihash,B225,         draft,
+blake2b-304,                    multihash,B226,         draft,
+blake2b-312,                    multihash,B227,         draft,
+blake2b-320,                    multihash,B228,         draft,
+blake2b-328,                    multihash,B229,         draft,
+blake2b-336,                    multihash,B22A,         draft,
+blake2b-344,                    multihash,B22B,         draft,
+blake2b-352,                    multihash,B22C,         draft,
+blake2b-360,                    multihash,B22D,         draft,
+blake2b-368,                    multihash,B22E,         draft,
+blake2b-376,                    multihash,B22F,         draft,
+blake2b-384,                    multihash,B230,         draft,
+blake2b-392,                    multihash,B231,         draft,
+blake2b-400,                    multihash,B232,         draft,
+blake2b-408,                    multihash,B233,         draft,
+blake2b-416,                    multihash,B234,         draft,
+blake2b-424,                    multihash,B235,         draft,
+blake2b-432,                    multihash,B236,         draft,
+blake2b-440,                    multihash,B237,         draft,
+blake2b-448,                    multihash,B238,         draft,
+blake2b-456,                    multihash,B239,         draft,
+blake2b-464,                    multihash,B23A,         draft,
+blake2b-472,                    multihash,B23B,         draft,
+blake2b-480,                    multihash,B23C,         draft,
+blake2b-488,                    multihash,B23D,         draft,
+blake2b-496,                    multihash,B23E,         draft,
+blake2b-504,                    multihash,B23F,         draft,
+blake2b-512,                    multihash,B240,         draft,
+blake2s-8,                      multihash,B241,         draft,Blake2s consists of 32 output lengths that give different hashes
+blake2s-16,                     multihash,B242,         draft,
+blake2s-24,                     multihash,B243,         draft,
+blake2s-32,                     multihash,B244,         draft,
+blake2s-40,                     multihash,B245,         draft,
+blake2s-48,                     multihash,B246,         draft,
+blake2s-56,                     multihash,B247,         draft,
+blake2s-64,                     multihash,B248,         draft,
+blake2s-72,                     multihash,B249,         draft,
+blake2s-80,                     multihash,B24A,         draft,
+blake2s-88,                     multihash,B24B,         draft,
+blake2s-96,                     multihash,B24C,         draft,
+blake2s-104,                    multihash,B24D,         draft,
+blake2s-112,                    multihash,B24E,         draft,
+blake2s-120,                    multihash,B24F,         draft,
+blake2s-128,                    multihash,B250,         draft,
+blake2s-136,                    multihash,B251,         draft,
+blake2s-144,                    multihash,B252,         draft,
+blake2s-152,                    multihash,B253,         draft,
+blake2s-160,                    multihash,B254,         draft,
+blake2s-168,                    multihash,B255,         draft,
+blake2s-176,                    multihash,B256,         draft,
+blake2s-184,                    multihash,B257,         draft,
+blake2s-192,                    multihash,B258,         draft,
+blake2s-200,                    multihash,B259,         draft,
+blake2s-208,                    multihash,B25A,         draft,
+blake2s-216,                    multihash,B25B,         draft,
+blake2s-224,                    multihash,B25C,         draft,
+blake2s-232,                    multihash,B25D,         draft,
+blake2s-240,                    multihash,B25E,         draft,
+blake2s-248,                    multihash,B25F,         draft,
+blake2s-256,                    multihash,B260,         draft,
+skein256-8,                     multihash,B301,         draft,Skein256 consists of 32 output lengths that give different hashes
+skein256-16,                    multihash,B302,         draft,
+skein256-24,                    multihash,B303,         draft,
+skein256-32,                    multihash,B304,         draft,
+skein256-40,                    multihash,B305,         draft,
+skein256-48,                    multihash,B306,         draft,
+skein256-56,                    multihash,B307,         draft,
+skein256-64,                    multihash,B308,         draft,
+skein256-72,                    multihash,B309,         draft,
+skein256-80,                    multihash,B30A,         draft,
+skein256-88,                    multihash,B30B,         draft,
+skein256-96,                    multihash,B30C,         draft,
+skein256-104,                   multihash,B30D,         draft,
+skein256-112,                   multihash,B30E,         draft,
+skein256-120,                   multihash,B30F,         draft,
+skein256-128,                   multihash,B310,         draft,
+skein256-136,                   multihash,B311,         draft,
+skein256-144,                   multihash,B312,         draft,
+skein256-152,                   multihash,B313,         draft,
+skein256-160,                   multihash,B314,         draft,
+skein256-168,                   multihash,B315,         draft,
+skein256-176,                   multihash,B316,         draft,
+skein256-184,                   multihash,B317,         draft,
+skein256-192,                   multihash,B318,         draft,
+skein256-200,                   multihash,B319,         draft,
+skein256-208,                   multihash,B31A,         draft,
+skein256-216,                   multihash,B31B,         draft,
+skein256-224,                   multihash,B31C,         draft,
+skein256-232,                   multihash,B31D,         draft,
+skein256-240,                   multihash,B31E,         draft,
+skein256-248,                   multihash,B31F,         draft,
+skein256-256,                   multihash,B320,         draft,
+skein512-8,                     multihash,B321,         draft,Skein512 consists of 64 output lengths that give different hashes
+skein512-16,                    multihash,B322,         draft,
+skein512-24,                    multihash,B323,         draft,
+skein512-32,                    multihash,B324,         draft,
+skein512-40,                    multihash,B325,         draft,
+skein512-48,                    multihash,B326,         draft,
+skein512-56,                    multihash,B327,         draft,
+skein512-64,                    multihash,B328,         draft,
+skein512-72,                    multihash,B329,         draft,
+skein512-80,                    multihash,B32A,         draft,
+skein512-88,                    multihash,B32B,         draft,
+skein512-96,                    multihash,B32C,         draft,
+skein512-104,                   multihash,B32D,         draft,
+skein512-112,                   multihash,B32E,         draft,
+skein512-120,                   multihash,B32F,         draft,
+skein512-128,                   multihash,B330,         draft,
+skein512-136,                   multihash,B331,         draft,
+skein512-144,                   multihash,B332,         draft,
+skein512-152,                   multihash,B333,         draft,
+skein512-160,                   multihash,B334,         draft,
+skein512-168,                   multihash,B335,         draft,
+skein512-176,                   multihash,B336,         draft,
+skein512-184,                   multihash,B337,         draft,
+skein512-192,                   multihash,B338,         draft,
+skein512-200,                   multihash,B339,         draft,
+skein512-208,                   multihash,B33A,         draft,
+skein512-216,                   multihash,B33B,         draft,
+skein512-224,                   multihash,B33C,         draft,
+skein512-232,                   multihash,B33D,         draft,
+skein512-240,                   multihash,B33E,         draft,
+skein512-248,                   multihash,B33F,         draft,
+skein512-256,                   multihash,B340,         draft,
+skein512-264,                   multihash,B341,         draft,
+skein512-272,                   multihash,B342,         draft,
+skein512-280,                   multihash,B343,         draft,
+skein512-288,                   multihash,B344,         draft,
+skein512-296,                   multihash,B345,         draft,
+skein512-304,                   multihash,B346,         draft,
+skein512-312,                   multihash,B347,         draft,
+skein512-320,                   multihash,B348,         draft,
+skein512-328,                   multihash,B349,         draft,
+skein512-336,                   multihash,B34A,         draft,
+skein512-344,                   multihash,B34B,         draft,
+skein512-352,                   multihash,B34C,         draft,
+skein512-360,                   multihash,B34D,         draft,
+skein512-368,                   multihash,B34E,         draft,
+skein512-376,                   multihash,B34F,         draft,
+skein512-384,                   multihash,B350,         draft,
+skein512-392,                   multihash,B351,         draft,
+skein512-400,                   multihash,B352,         draft,
+skein512-408,                   multihash,B353,         draft,
+skein512-416,                   multihash,B354,         draft,
+skein512-424,                   multihash,B355,         draft,
+skein512-432,                   multihash,B356,         draft,
+skein512-440,                   multihash,B357,         draft,
+skein512-448,                   multihash,B358,         draft,
+skein512-456,                   multihash,B359,         draft,
+skein512-464,                   multihash,B35A,         draft,
+skein512-472,                   multihash,B35B,         draft,
+skein512-480,                   multihash,B35C,         draft,
+skein512-488,                   multihash,B35D,         draft,
+skein512-496,                   multihash,B35E,         draft,
+skein512-504,                   multihash,B35F,         draft,
+skein512-512,                   multihash,B360,         draft,
+skein1024-8,                    multihash,B361,         draft,Skein1024 consists of 128 output lengths that give different hashes
+skein1024-16,                   multihash,B362,         draft,
+skein1024-24,                   multihash,B363,         draft,
+skein1024-32,                   multihash,B364,         draft,
+skein1024-40,                   multihash,B365,         draft,
+skein1024-48,                   multihash,B366,         draft,
+skein1024-56,                   multihash,B367,         draft,
+skein1024-64,                   multihash,B368,         draft,
+skein1024-72,                   multihash,B369,         draft,
+skein1024-80,                   multihash,B36A,         draft,
+skein1024-88,                   multihash,B36B,         draft,
+skein1024-96,                   multihash,B36C,         draft,
+skein1024-104,                  multihash,B36D,         draft,
+skein1024-112,                  multihash,B36E,         draft,
+skein1024-120,                  multihash,B36F,         draft,
+skein1024-128,                  multihash,B370,         draft,
+skein1024-136,                  multihash,B371,         draft,
+skein1024-144,                  multihash,B372,         draft,
+skein1024-152,                  multihash,B373,         draft,
+skein1024-160,                  multihash,B374,         draft,
+skein1024-168,                  multihash,B375,         draft,
+skein1024-176,                  multihash,B376,         draft,
+skein1024-184,                  multihash,B377,         draft,
+skein1024-192,                  multihash,B378,         draft,
+skein1024-200,                  multihash,B379,         draft,
+skein1024-208,                  multihash,B37A,         draft,
+skein1024-216,                  multihash,B37B,         draft,
+skein1024-224,                  multihash,B37C,         draft,
+skein1024-232,                  multihash,B37D,         draft,
+skein1024-240,                  multihash,B37E,         draft,
+skein1024-248,                  multihash,B37F,         draft,
+skein1024-256,                  multihash,B380,         draft,
+skein1024-264,                  multihash,B381,         draft,
+skein1024-272,                  multihash,B382,         draft,
+skein1024-280,                  multihash,B383,         draft,
+skein1024-288,                  multihash,B384,         draft,
+skein1024-296,                  multihash,B385,         draft,
+skein1024-304,                  multihash,B386,         draft,
+skein1024-312,                  multihash,B387,         draft,
+skein1024-320,                  multihash,B388,         draft,
+skein1024-328,                  multihash,B389,         draft,
+skein1024-336,                  multihash,B38A,         draft,
+skein1024-344,                  multihash,B38B,         draft,
+skein1024-352,                  multihash,B38C,         draft,
+skein1024-360,                  multihash,B38D,         draft,
+skein1024-368,                  multihash,B38E,         draft,
+skein1024-376,                  multihash,B38F,         draft,
+skein1024-384,                  multihash,B390,         draft,
+skein1024-392,                  multihash,B391,         draft,
+skein1024-400,                  multihash,B392,         draft,
+skein1024-408,                  multihash,B393,         draft,
+skein1024-416,                  multihash,B394,         draft,
+skein1024-424,                  multihash,B395,         draft,
+skein1024-432,                  multihash,B396,         draft,
+skein1024-440,                  multihash,B397,         draft,
+skein1024-448,                  multihash,B398,         draft,
+skein1024-456,                  multihash,B399,         draft,
+skein1024-464,                  multihash,B39A,         draft,
+skein1024-472,                  multihash,B39B,         draft,
+skein1024-480,                  multihash,B39C,         draft,
+skein1024-488,                  multihash,B39D,         draft,
+skein1024-496,                  multihash,B39E,         draft,
+skein1024-504,                  multihash,B39F,         draft,
+skein1024-512,                  multihash,B3A0,         draft,
+skein1024-520,                  multihash,B3A1,         draft,
+skein1024-528,                  multihash,B3A2,         draft,
+skein1024-536,                  multihash,B3A3,         draft,
+skein1024-544,                  multihash,B3A4,         draft,
+skein1024-552,                  multihash,B3A5,         draft,
+skein1024-560,                  multihash,B3A6,         draft,
+skein1024-568,                  multihash,B3A7,         draft,
+skein1024-576,                  multihash,B3A8,         draft,
+skein1024-584,                  multihash,B3A9,         draft,
+skein1024-592,                  multihash,B3AA,         draft,
+skein1024-600,                  multihash,B3AB,         draft,
+skein1024-608,                  multihash,B3AC,         draft,
+skein1024-616,                  multihash,B3AD,         draft,
+skein1024-624,                  multihash,B3AE,         draft,
+skein1024-632,                  multihash,B3AF,         draft,
+skein1024-640,                  multihash,B3B0,         draft,
+skein1024-648,                  multihash,B3B1,         draft,
+skein1024-656,                  multihash,B3B2,         draft,
+skein1024-664,                  multihash,B3B3,         draft,
+skein1024-672,                  multihash,B3B4,         draft,
+skein1024-680,                  multihash,B3B5,         draft,
+skein1024-688,                  multihash,B3B6,         draft,
+skein1024-696,                  multihash,B3B7,         draft,
+skein1024-704,                  multihash,B3B8,         draft,
+skein1024-712,                  multihash,B3B9,         draft,
+skein1024-720,                  multihash,B3BA,         draft,
+skein1024-728,                  multihash,B3BB,         draft,
+skein1024-736,                  multihash,B3BC,         draft,
+skein1024-744,                  multihash,B3BD,         draft,
+skein1024-752,                  multihash,B3BE,         draft,
+skein1024-760,                  multihash,B3BF,         draft,
+skein1024-768,                  multihash,B3C0,         draft,
+skein1024-776,                  multihash,B3C1,         draft,
+skein1024-784,                  multihash,B3C2,         draft,
+skein1024-792,                  multihash,B3C3,         draft,
+skein1024-800,                  multihash,B3C4,         draft,
+skein1024-808,                  multihash,B3C5,         draft,
+skein1024-816,                  multihash,B3C6,         draft,
+skein1024-824,                  multihash,B3C7,         draft,
+skein1024-832,                  multihash,B3C8,         draft,
+skein1024-840,                  multihash,B3C9,         draft,
+skein1024-848,                  multihash,B3CA,         draft,
+skein1024-856,                  multihash,B3CB,         draft,
+skein1024-864,                  multihash,B3CC,         draft,
+skein1024-872,                  multihash,B3CD,         draft,
+skein1024-880,                  multihash,B3CE,         draft,
+skein1024-888,                  multihash,B3CF,         draft,
+skein1024-896,                  multihash,B3D0,         draft,
+skein1024-904,                  multihash,B3D1,         draft,
+skein1024-912,                  multihash,B3D2,         draft,
+skein1024-920,                  multihash,B3D3,         draft,
+skein1024-928,                  multihash,B3D4,         draft,
+skein1024-936,                  multihash,B3D5,         draft,
+skein1024-944,                  multihash,B3D6,         draft,
+skein1024-952,                  multihash,B3D7,         draft,
+skein1024-960,                  multihash,B3D8,         draft,
+skein1024-968,                  multihash,B3D9,         draft,
+skein1024-976,                  multihash,B3DA,         draft,
+skein1024-984,                  multihash,B3DB,         draft,
+skein1024-992,                  multihash,B3DC,         draft,
+skein1024-1000,                 multihash,B3DD,         draft,
+skein1024-1008,                 multihash,B3DE,         draft,
+skein1024-1016,                 multihash,B3DF,         draft,
+skein1024-1024,                 multihash,B3E0,         draft,
+poseidon-bls12_381-a2-fc1,      multihash,B401,         permanent,Poseidon using BLS12-381 and arity of 2 with Filecoin parameters
+poseidon-bls12_381-a2-fc1-sc,   multihash,B402,         draft,Poseidon using BLS12-381 and arity of 2 with Filecoin parameters - high-security variant
+zeroxcert-imprint-256,          zeroxcert,CE11,         draft,0xcert Asset Imprint (root hash)
+fil-commitment-unsealed,        filecoin,F101,         permanent, Filecoin piece or sector data commitment merkle node/root (CommP & CommD)
+fil-commitment-sealed,          filecoin,F102,         permanent, Filecoin sector data commitment merkle node/root - sealed and replicated (CommR)
+holochain-adr-v0,               holochain,807124,       draft,Holochain v0 address    + 8 R-S (63 x Base-32)
+holochain-adr-v1,               holochain,817124,       draft,Holochain v1 address    + 8 R-S (63 x Base-32)
+holochain-key-v0,               holochain,947124,       draft,Holochain v0 public key + 8 R-S (63 x Base-32)
+holochain-key-v1,               holochain,957124,       draft,Holochain v1 public key + 8 R-S (63 x Base-32)
+holochain-sig-v0,               holochain,A27124,       draft,Holochain v0 signature  + 8 R-S (63 x Base-32)
+holochain-sig-v1,               holochain,A37124,       draft,Holochain v1 signature  + 8 R-S (63 x Base-32)
+skynet-ns,                      namespace,B19910,       draft,     Skynet Namespace
