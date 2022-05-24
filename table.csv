@@ -477,6 +477,9 @@ skein1024-1024,                 multihash,      0xb3e0,         draft,
 poseidon-bls12_381-a2-fc1,      multihash,      0xb401,         permanent, Poseidon using BLS12-381 and arity of 2 with Filecoin parameters
 poseidon-bls12_381-a2-fc1-sc,   multihash,      0xb402,         draft,     Poseidon using BLS12-381 and arity of 2 with Filecoin parameters - high-security variant
 iscc,                           softhash,       0xcc01,         draft,     ISCC (International Standard Content Code) - similarity preserving hash
+dynamic-multihash,              multihash,      0xc101,         draft,     Self-describing multihash
+proto-file-descriptor-set,      ipld,           0xc102,         draft,     Multi-content type that stipulates that the referenced block binary is for an IPLD object which consists of a list of CID links that reference protobuf encoded FileDescriptorProto messages
+typed-protobuf,                 ipld,           0xc103,         draft,     Multi-content type that stipulates the referenced binary is for an IPLD object whereby the first element is a CID link to a proto-file-descriptor-set and the second element is the protobuf encoding of a value whose message type is described by the linked proto-file-descriptor-set
 zeroxcert-imprint-256,          zeroxcert,      0xce11,         draft,     0xcert Asset Imprint (root hash)
 fil-commitment-unsealed,        filecoin,       0xf101,         permanent, Filecoin piece or sector data commitment merkle node/root (CommP & CommD)
 fil-commitment-sealed,          filecoin,       0xf102,         permanent, Filecoin sector data commitment merkle node/root - sealed and replicated (CommR)
