@@ -476,10 +476,26 @@ skein1024-1016,                 multihash,      0xb3df,         draft,
 skein1024-1024,                 multihash,      0xb3e0,         draft,
 poseidon-bls12_381-a2-fc1,      multihash,      0xb401,         permanent, Poseidon using BLS12-381 and arity of 2 with Filecoin parameters
 poseidon-bls12_381-a2-fc1-sc,   multihash,      0xb402,         draft,     Poseidon using BLS12-381 and arity of 2 with Filecoin parameters - high-security variant
+sha2-256-ignore-32-byte-prefix, multihash,      0xc101,         draft,     SHA2-256 hash function that trims the first 32 bytes from the provided content before hashing it
+proto-file-descriptor-set,      ipld,           0xc111,         draft,     Multi-content type that stipulates that the referenced block binary is for an IPLD object which consists of a list of CID links that reference protobuf encoded FileDescriptorProto messages
+typed-protobuf,                 ipld,           0xc112,         draft,     Multi-content type that stipulates the referenced binary is for an IPLD object whereby the first element is a CID link to a proto-file-descriptor-set and the second element is the protobuf encoding of a value whose message type is described by the linked proto-file-descriptor-set
+tendermint-block-bmt,           multihash,      0xc121,         draft,     Multihash which specifies the Tendermint Block Merkleization algorithm
+tendermint-block,               ipld,           0xc122,         draft,     Tendermint block IPLD
+tendermint-block-part-tree,     ipld,           0xc123,         draft,     Tendermint block part Merkle tree node IPLD
+tendermint-header-bmt,          mulithash,      0xc124,         draft,     Multihash which specifies the Tendermint Header Merkleization algorithm
+tendermint-header,              ipld,           0xc125,         draft,     Tendermint header IPLD
+tendermint-header-field-tree,   ipld,           0xc126,         draft,     Tendermint header field Merkle tree node IPLD
+tendermint-light-block,         ipld,           0xc127,         draft,     Tendermint light block IPLD
+tendermint-validator-tree,      ipld,           0xc128,         draft,     Tendermint simple validator Merkle tree node IPLD
+tendermint-evidence-tree,       ipld,           0xc129,         draft,     Tendermint evidence Merkle tree node IPLD
+tendermint-tx-tree,             ipld,           0xc12a,         draft,     Tendermint transaction Merkle tree node IPLD
+tendermint-result-tree,         ipld,           0xc12b,         draft,     Tendermint result Merkle tree node IPLD
+tendermint-commit-tree,         ipld,           0xc12c,         draft,     Tendermint commit Merkle tree node IPLD
+tendermint-hashed-params,       ipld,           0xc12d,         draft,     Tendermint hashed params IPLD
+tendermint-canonical-proposal,  ipld,           0xc12e,         draft,     Tendermint canonical proposal IPLD
+cosmos-iavl,                    ipld,           0xc141,         draft,     Cosmos IAVL node IPLD
+cosmos-smt,                     ipld,           0xc142,         draft,     Cosmos SMT node IPLD
 iscc,                           softhash,       0xcc01,         draft,     ISCC (International Standard Content Code) - similarity preserving hash
-dynamic-multihash,              multihash,      0xc101,         draft,     Self-describing multihash
-proto-file-descriptor-set,      ipld,           0xc102,         draft,     Multi-content type that stipulates that the referenced block binary is for an IPLD object which consists of a list of CID links that reference protobuf encoded FileDescriptorProto messages
-typed-protobuf,                 ipld,           0xc103,         draft,     Multi-content type that stipulates the referenced binary is for an IPLD object whereby the first element is a CID link to a proto-file-descriptor-set and the second element is the protobuf encoding of a value whose message type is described by the linked proto-file-descriptor-set
 zeroxcert-imprint-256,          zeroxcert,      0xce11,         draft,     0xcert Asset Imprint (root hash)
 fil-commitment-unsealed,        filecoin,       0xf101,         permanent, Filecoin piece or sector data commitment merkle node/root (CommP & CommD)
 fil-commitment-sealed,          filecoin,       0xf102,         permanent, Filecoin sector data commitment merkle node/root - sealed and replicated (CommR)
